@@ -7,7 +7,7 @@ export default defineConfig(({ command }) => ({
   // En desarrollo (npm run dev) usa "/" → funciona en localhost:5173
   // En producción (npm run build / npm run deploy) cambia el string
   // por el nombre exacto de tu repo en GitHub: "/nombre-de-tu-repo/"
-  base: command === "build" ? "/mentorhub/" : "/",
+  base: command === "build" ? "/MentorHub/" : "/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
