@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+
+  /* Sin border-radius en todo excepto full */
+  *:not(.rounded-full):not(img):not(.photo-circle) {
+    border-radius: 0 !important;
+  }
+  .rounded-full { border-radius: 9999px !important; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 48px 48px;
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4 { @apply font-display; }
+
+  :focus-visible {
+    outline: 2px solid #18C964;
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: #18C964;
+    color: #000;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+
+  .tag-mono {
+    @apply font-mono text-[10px] tracking-[0.2em] uppercase;
+  }
+
+  .glow-border {
+    box-shadow: 0 0 0 1px rgba(24,201,100,0.4), 0 0 20px rgba(24,201,100,0.1);
+  }
+
+  .section-label {
+    @apply tag-mono text-primary mb-3 block;
+  }
+}
